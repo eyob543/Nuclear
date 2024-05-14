@@ -366,7 +366,7 @@ export default function NuclearEnergy() {
             {!quizEnded && (
               <Button
                 sx={{
-                  marginLeft: 30,
+                  marginLeft: 35,
                   color: "white",
                   backgroundColor: "teal",
                   ":hover": {
