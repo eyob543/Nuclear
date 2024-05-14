@@ -90,15 +90,35 @@ export default function Benefits() {
           gap: 2,
         }}
       >
-        <Typography variant="h2" textAlign="center">
+        <Typography
+          sx={{
+            fontSize: {
+              xs: 25,
+              md: 50,
+            },
+          }}
+          textAlign="center"
+        >
           Benefits and misconceptions of nuclear energy
         </Typography>
-        <Typography variant="h3" marginTop={5} textAlign="center">
+        <Typography
+          sx={{
+            fontSize: {
+              xs: 20,
+              md: 40,
+            },
+          }}
+          marginTop={5}
+          textAlign="center"
+        >
           Benefits
         </Typography>
         <Typography
           sx={{
-            px: "2.5rem",
+            px: {
+              md: "2.5rem",
+              xs: "1.7rem",
+            },
             lineHeight: 1.7,
           }}
         >
@@ -314,7 +334,10 @@ export default function Benefits() {
                   >
                     <Button
                       sx={{
-                        marginLeft: 20,
+                        marginLeft: {
+                          xs: 3,
+                          md: 20,
+                        },
                         ":hover": {
                           top: 2,
                         },
@@ -336,8 +359,11 @@ export default function Benefits() {
               {!quizEnded && (
                 <Button
                   sx={{
-                    marginLeft: 30,
-                    color:"white",
+                    marginLeft: {
+                      xs: 10,
+                      md: 30,
+                    },
+                    color: "white",
                     backgroundColor: "teal",
                     ":hover": {
                       backgroundColor: "green",
@@ -356,8 +382,10 @@ export default function Benefits() {
                   {incorrectAnswers} incorrect.
                   <Button
                     sx={{
-                      marginLeft: 30,
-
+                      marginLeft: {
+                        xs: 10,
+                        md: 30,
+                      },
                       backgroundColor: "teal",
                       color: "white",
                       ":hover": {

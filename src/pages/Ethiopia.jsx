@@ -278,7 +278,10 @@ const handleChoiceSelection = (choice) => {
                     >
                       <Button
                         sx={{
-                          marginLeft: 20,
+                          marginLeft: {
+                            xs: 5,
+                            md: 30,
+                          },
                           ":hover": {
                             top: 2,
                           },
@@ -301,7 +304,10 @@ const handleChoiceSelection = (choice) => {
                 {!quizEnded && (
                   <Button
                     sx={{
-                      marginLeft: 30,
+                      marginLeft: {
+                        xs: 10,
+                        md: 30,
+                      },
 
                       backgroundColor: "teal",
                       ":hover": {
@@ -323,7 +329,10 @@ const handleChoiceSelection = (choice) => {
                     {incorrectAnswers} incorrect.
                     <Button
                       sx={{
-                        marginLeft: 30,
+                        marginLeft: {
+                          xs: 10,
+                          md: 30,
+                        },
 
                         backgroundColor: "teal",
                         color: "white",

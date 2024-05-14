@@ -159,7 +159,7 @@ export default function NuclearEnergy() {
         <Typography
           sx={{
             px: {
-              xs: "20%",
+              xs: "1.7rem",
               md: "2.5rem",
             },
             lineHeight: 1.7,
