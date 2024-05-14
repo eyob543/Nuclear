@@ -20,15 +20,17 @@ export default function ViewSuggestions() {
     );
   }, []);
   return (
-    <>
+    <Box
+      sx={{
+        height: "100vh",
+      }}
+    >
       {suggestions.map((value) => (
         <Box
           sx={{
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
-
-            height: "100vh",
           }}
           key={value.email}
         >
@@ -36,6 +38,6 @@ export default function ViewSuggestions() {
           <Typography fontSize={15}>{value.name}</Typography>
         </Box>
       ))}
-    </>
+    </Box>
   );
 }
