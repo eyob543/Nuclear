@@ -3,8 +3,8 @@ import { useForm } from "react-hook-form";
 import { useState, useEffect } from "react";
 import { database } from "../firebase";
 import Typography from "@mui/material/Typography";
-import { set, ref, onValue } from "firebase/database";
-import _ from "lodash";
+import { set, ref } from "firebase/database";
+import { v4 as uuidv4 } from "uuid";
 import { useNavigate } from "react-router-dom";
 export default function Suggestions() {
   const {
@@ -25,19 +25,7 @@ export default function Suggestions() {
   const db = database;
 
   const onSubmit = (data) => {
-    let numberOfSuggestions;
-    const blogCountRef = ref(db, "suggestions");
-    onValue(
-      blogCountRef,
-      (snapshot) => {
-        const data = snapshot.val();
-        numberOfSuggestions = _.toArray(data).length;
-      },
-      (error) => {
-        console.log(error);
-      },
-    );
-    set(ref(db, `suggestions/${numberOfSuggestions}`), {
+    set(ref(db, `suggestions/${uuidv4()}`), {
       title: data.firstName,
       suggestion: data.suggestion,
       email: data.email,

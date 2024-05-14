@@ -4,6 +4,7 @@ import { database } from "../firebase";
 import { useEffect, useState } from "react";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
+import { v4 as uuidv4 } from "uuid";
 export default function ViewSuggestions() {
   const db = database;
   const [suggestions, setSuggestions] = useState([]);
@@ -32,7 +33,7 @@ export default function ViewSuggestions() {
             flexDirection: "column",
             alignItems: "center",
           }}
-          key={value.email}
+          key={uuidv4()}
         >
           <Typography fontSize={20}>{value.suggestion}</Typography>
           <Typography fontSize={15}>{value.name}</Typography>
