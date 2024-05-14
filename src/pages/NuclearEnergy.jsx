@@ -11,6 +11,9 @@ import Image2 from "../images/image2.jpg";
 import Image3 from "../images/image3.jpg";
 import Image4 from "../images/image4.jpg";
 import { useState, useEffect } from "react";
+import successGIF from "../images/success.gif";
+import incorrectGIF from "../images/incorrect.gif";
+
 export default function NuclearEnergy() {
   const [question, setQuestion] = useState({});
   const [count, setCount] = useState(0);
@@ -360,7 +363,19 @@ export default function NuclearEnergy() {
             </ul>
             {selectedChoice && (
               <Typography textAlign="center">
-                {isCorrect ? "Correct!" : "Incorrect. Please try again."}
+                {isCorrect ? (
+                  <img
+                    style={{ width: "100px", height: "100px" }}
+                    src={successGIF}
+                    alt="Correct answer"
+                  />
+                ) : (
+                  <img
+                    style={{ width: "100px", height: "100px" }}
+                    src={incorrectGIF}
+                    alt="Incorrect answer"
+                  />
+                )}
               </Typography>
             )}
             {!quizEnded && (

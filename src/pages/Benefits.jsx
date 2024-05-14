@@ -3,6 +3,8 @@ import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import { useState, useEffect } from 'react'
+import successGIF from "../images/success.gif";
+import incorrectGIF from "../images/incorrect.gif";
 export default function Benefits() {
   const [question, setQuestion] = useState({});
   const [count, setCount] = useState(0);
@@ -11,32 +13,31 @@ export default function Benefits() {
   const [quizEnded, setQuizEnded] = useState(false);
   const [correctAnswers, setCorrectAnswers] = useState(0);
   const [incorrectAnswers, setIncorrectAnswers] = useState(0);
- 
+
   const questions = [
     {
       question: "Which of the following is the benefit of nuclear energy? ",
-      choices: ["A.  Low Greenhouse Gas Emissions",
-                "B.  High Energy Density",
-                "C.  Reliable Power Supply",
-                "D.  All of the above "],
+      choices: [
+        "A.  Low Greenhouse Gas Emissions",
+        "B.  High Energy Density",
+        "C.  Reliable Power Supply",
+        "D.  All of the above ",
+      ],
       answer: "D.  All of the above ",
     },
     {
       question: "  Reduced Air pollution is an advantage of nuclear energy?",
-      choices: [
-        "A. True",
-        "B. False",
-        
-      ],
+      choices: ["A. True", "B. False"],
       answer: "A. True",
     },
     {
-      question: "Which of the following is the misconception of nuclear energy?",
+      question:
+        "Which of the following is the misconception of nuclear energy?",
       choices: [
         "A.  Base load power",
         "B.  Technological advancement",
         "C.  Health risk",
-        "D.  Job creation and economic growth "
+        "D.  Job creation and economic growth ",
       ],
       answer: "C.  Health risk",
     },
@@ -46,10 +47,9 @@ export default function Benefits() {
       answer: "B. False",
     },
     {
-      question:
-        "Nuclear energy is a sustainable energy source. ",
-        choices: ["A. True", "B. False"],
-        answer: "A. True",
+      question: "Nuclear energy is a sustainable energy source. ",
+      choices: ["A. True", "B. False"],
+      answer: "A. True",
     },
   ];
 
@@ -353,7 +353,19 @@ export default function Benefits() {
               </ul>
               {selectedChoice && (
                 <Typography textAlign="center">
-                  {isCorrect ? "Correct!" : "Incorrect. Please try again."}
+                  {isCorrect ? (
+                    <img
+                      style={{ width: "100px", height: "100px" }}
+                      src={successGIF}
+                      alt="Correct answer"
+                    />
+                  ) : (
+                    <img
+                      style={{ width: "100px", height: "100px" }}
+                      src={incorrectGIF}
+                      alt="Incorrect answer"
+                    />
+                  )}
                 </Typography>
               )}
               {!quizEnded && (
