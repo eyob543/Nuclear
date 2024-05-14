@@ -335,6 +335,7 @@ export default function NuclearEnergy() {
                   xs: 25,
                   md: 40,
                 },
+                textAlign: "center",
               }}
             >
               {question.question}
@@ -358,11 +359,15 @@ export default function NuclearEnergy() {
               ))}
             </ul>
             {selectedChoice && (
-              <p>{isCorrect ? "Correct!" : "Incorrect. Please try again."}</p>
+              <Typography textAlign="center">
+                {isCorrect ? "Correct!" : "Incorrect. Please try again."}
+              </Typography>
             )}
             {!quizEnded && (
               <Button
                 sx={{
+                  marginLeft: 30,
+                  color: "white",
                   backgroundColor: "teal",
                   ":hover": {
                     backgroundColor: "green",
